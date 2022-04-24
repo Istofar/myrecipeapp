@@ -9,14 +9,14 @@ import { AnimatePresence } from "framer-motion";
 function Pages() {
   const location = useLocation();
   return (
-    <Routes location={location} key={location.pathname}>
-      <AnimatePresence exitBeforeEnter>
+    <AnimatePresence exitBeforeEnter>
+      <Routes location={location} key={location.pathname}>
         <Route path="/" element={<Home />} />
         <Route path="/cuisine/:type" element={<Cuisine />} />
         <Route path="/searched/:search" element={<Searched />} />
         <Route path="/recipe/:name" element={<Recipe />} />
-      </AnimatePresence>
-    </Routes>
+      </Routes>
+    </AnimatePresence>
   );
 }
 
