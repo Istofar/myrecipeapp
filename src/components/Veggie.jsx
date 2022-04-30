@@ -36,7 +36,7 @@ function Veggie() {
             arrows: false,
             pagination: false,
             drag: "free",
-            gap: "15rem",
+            gap: "3rem",
           }}
         >
           {veggie.map((recipe) => {
@@ -63,11 +63,12 @@ const Wrapper = styled.div`
 `;
 
 const Card = styled.div`
-  min-height: 12rem;
+  min-height: 14rem;
   border-radius: 2rem;
   overflow: hidden;
   position: relative;
   min-width: 14rem;
+
   img {
     border-radius: 2rem;
     position: absolute;
@@ -76,6 +77,7 @@ const Card = styled.div`
     height: 100%;
     object-fit: cover;
   }
+
   p {
     position: absolute;
     z-index: 10;
@@ -90,6 +92,7 @@ const Card = styled.div`
     height: 40%;
     justify-content: center;
     align-items: center;
+    color: white;
   }
 `;
 

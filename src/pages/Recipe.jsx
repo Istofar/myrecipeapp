@@ -1,12 +1,10 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { useParams } from "react-router-dom";
 
-import React from "react";
-
 function Recipe() {
   let params = useParams();
-  const [details, setDetails] = useState();
+  const [details, setDetails] = useState({});
   const [activeTab, setActiveTab] = useState("instructions");
 
   const fetchDetails = async () => {
@@ -18,8 +16,9 @@ function Recipe() {
   };
 
   useEffect(() => {
-    fetchDetails();
+    fetchDetails(params.name);
   }, [params.name]);
+
   return (
     <DetailWrapper>
       <div>
@@ -89,6 +88,6 @@ const Button = styled.button`
 `;
 
 const Info = styled.div`
-  margin_left: 10rem;
+  margin-left: 10rem;
 `;
 export default Recipe;
